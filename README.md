@@ -9,9 +9,9 @@ Each trigger must be synchronized to a single start trigger. The point at which 
 ## Operation of NI Timing Card.vi
 DAQmx counters of the timing card provide a means of generating rising/falling edges and pulses. The counters are controlled through DAQmx Tasks.
 
-One task is used to provide the Master Timer: The delay between the start of the measurement and the *start trigger* (i.e. the *pre-trigger time*) is implemented as the *low time* of counter task; the measurement-duration is governed by the *high-time* of this counter task.
+A DAQmx task is used to control the counter used for the Master Timer: The delay between the start of the measurement and the *start trigger* (i.e. the *pre-trigger time*) is implemented as the *low time* of counter task; the measurement-duration is governed by the *high-time* of this counter task.
 
-Subordinate Timers are configurable to provide different types of output - currently rising or falling edge steps and with variable delays from the start-trigger. They also make use of counters (one per timer) and are configured in a similar way to the Master Timer's counter except that they trigger from the internal output of the Master Timer's counter and the high/low time (depending on rising/falling edge respectively) are set taking into account the measurement-duration.
+Subordinate Timers are realized as individual DAQmx tasks; each is configurable to provide different types of output, currently rising or falling edge steps, and at variable delays from the start-trigger. They are configured in a similar way to the Master Timer's counter except that they trigger from the 'internal' output of the Master Timer's counter and the high/low time (depending on rising/falling edge respectively) are set taking into account the measurement-duration.
 
 The Master Timer's counter is triggered implicitly so the DAQmx Start Task vi is not called until everything is configured. Once started, the Master Timer's counter task can be polled to see when the measurement time has elapsed. After this time the Subordinate Timer Tasks are explicitly stopped to clear any which have not completed.
 
