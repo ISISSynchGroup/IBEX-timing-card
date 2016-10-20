@@ -21,6 +21,9 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="NI Timing Card.vi" Type="VI" URL="../NI Timing Card.vi"/>
 		<Item Name="README.md" Type="Document" URL="../README.md"/>
+		<Item Name="Setup Master.vi" Type="VI" URL="../SubVIs/Setup Master.vi"/>
+		<Item Name="Setup Subordinates.vi" Type="VI" URL="../SubVIs/Setup Subordinates.vi"/>
+		<Item Name="State Control.ctl" Type="VI" URL="../SubVIs/State Control.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
