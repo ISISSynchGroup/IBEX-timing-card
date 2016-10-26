@@ -10,6 +10,7 @@
 		<Property Name="IOScan.Priority" Type="UInt">9</Property>
 		<Property Name="IOScan.ReportModeConflict" Type="Bool">true</Property>
 		<Property Name="IOScan.StartEngineOnDeploy" Type="Bool">false</Property>
+		<Property Name="NI.SortType" Type="Int">3</Property>
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.tcp.enabled" Type="Bool">false</Property>
@@ -20,12 +21,14 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Sub VIs" Type="Folder">
+			<Item Name="Maximum Single Tick Time.vi" Type="VI" URL="../SubVIs/Maximum Single Tick Time.vi"/>
+			<Item Name="Set Pulse Time to Minimum.vi" Type="VI" URL="../SubVIs/Set Pulse Time to Minimum.vi"/>
 			<Item Name="Setup Master.vi" Type="VI" URL="../SubVIs/Setup Master.vi"/>
 			<Item Name="Setup Subordinates.vi" Type="VI" URL="../SubVIs/Setup Subordinates.vi"/>
 			<Item Name="State Control.ctl" Type="VI" URL="../SubVIs/State Control.ctl"/>
 		</Item>
-		<Item Name="NI Timing Card.vi" Type="VI" URL="../NI Timing Card.vi"/>
 		<Item Name="README.md" Type="Document" URL="../README.md"/>
+		<Item Name="NI Timing Card.vi" Type="VI" URL="../NI Timing Card.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
