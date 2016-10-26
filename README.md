@@ -15,7 +15,9 @@ Subordinate Timers are realized as individual DAQmx tasks; each is configurable 
 
 The Master Timer's counter is triggered implicitly so the DAQmx Start Task vi is not called until everything is configured. Once started, the Master Timer's counter task can be polled to see when the measurement time has elapsed. After this time the Subordinate Timer Tasks are explicitly stopped to clear any which have not completed.
 
-The code is designed for user interaction **before** the *Run VI* button is pressed. As soon as the VI is run it sets up the tasks, performs a single shot and cleans up. It is intended for testing the timing card and verifying that this mode of operating the hardware is acceptable. **It is not designed to be production code or even be converted into such**
+This code can be used "interactively" i.e. once the *Run VI* button is pressed it is still possible to make changes to the timing settings. There is little to no error checking so invalid setting with throw some pretty cryptic errors. As this is just a proof on concept code, this is unlikely to change. 
+
+Please Note: **This code is not designed to be production code or even be converted into such**
 
 Following successful development,hacking and testing the concepts of operation will be converted into a library.
 
